@@ -31,6 +31,7 @@ Route::resource('order', '\App\Http\Controllers\OrderController');
 Route::resource('transaction', '\App\Http\Controllers\TransactionController');
 Route::resource('purchase', '\App\Http\Controllers\PurchaseController');
 Route::resource('profile', '\App\Http\Controllers\ProfileController');
+Route::resource('chat', '\App\Http\Controllers\ChatController');
 
 
 //Pages Routes

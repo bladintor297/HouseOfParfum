@@ -41,6 +41,7 @@
         }
         .add-perfume {
             /* display: none; */
+
             position: fixed;
             bottom: 20px;
             right: 30px;
@@ -100,28 +101,148 @@
             display: inline-block;
             vertical-align: middle;
         }
+
+
+        .chat-box {
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            overflow: auto;
+            
+        }
+
+        .chats {
+            padding: 0px 15px
+        }
+
+        .chat-avatar {
+            float: right
+        }
+
+        .chat-avatar .avatar {
+            width: 30px
+                -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+        }
+
+        .chat-body {
+            display: block;
+            margin: 10px 30px 0 0;
+            overflow: hidden
+        }
+
+        .chat-body:first-child {
+            margin-top: 0
+        }
+
+        .chat-content {
+            position: relative;
+            display: block;
+            float: right;
+            padding: 8px 15px;
+            margin: 0 20px 10px 0;
+            clear: both;
+            color: #fff;
+            background-color: #62a8ea;
+            border-radius: 4px;
+                -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+        }
+
+        .chat-content:before {
+            position: absolute;
+            top: 10px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            content: '';
+            border: 5px solid transparent;
+            border-left-color: #62a8ea
+        }
+
+        .chat-content>p:last-child {
+            margin-bottom: 0
+        }
+
+        .chat-content+.chat-content:before {
+            border-color: transparent
+        }
+
+        .chat-time {
+            display: block;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, .6)
+        }
+
+        .chat-left .chat-avatar {
+            float: left
+        }
+
+        .chat-left .chat-body {
+            margin-right: 0;
+            margin-left: 30px
+        }
+
+        .chat-left .chat-content {
+            float: left;
+            margin: 0 0 10px 20px;
+            color: #76838f;
+            background-color: #dfe9ef
+        }
+
+        .chat-left .chat-content:before {
+            right: auto;
+            left: -10px;
+            border-right-color: #dfe9ef;
+            border-left-color: transparent
+        }
+
+        .chat-left .chat-content+.chat-content:before {
+            border-color: transparent
+        }
+
+        .chat-left .chat-time {
+            color: #a3afb7
+        }
+
+
+        .avatar img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 0 none;
+            border-radius: 1000px;
+        }
+        .chat-avatar .avatar {
+            width: 30px;
+        }
+        .avatar {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            white-space: nowrap;
+            border-radius: 1000px;
+            vertical-align: bottom;
+        }
+
     </style>
+
 </head>
-<script>
-    $('.toast').toast({})
-</script>
+
 <body>
     @include('inc.navbar')
     @include('inc.messages')
     @yield('content')
+
+
     {{-- <div class="container">
         <div class="container-fluid"><br>
             @include('inc.messages')
             @yield('content')
         </div>
     </div> --}}
-    @if (Session::has('role'))
-    <a class="btn btn-warning px-4 chat-btn rounded-pill " href ="/chat">
-        <i class="fa-brands fa-rocketchat"></i>
-        <span>Live Chat</span>
-    </a>
-    @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
